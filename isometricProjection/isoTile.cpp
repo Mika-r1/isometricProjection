@@ -34,4 +34,6 @@ bool isoTile::load(unsigned int x, unsigned int y)
     int y_screen = y_start + (x + y) * (TILE_HEIGHT / 2)/2;
    
     tile.setPosition(x_screen, y_screen);
+
+    return true;
 }

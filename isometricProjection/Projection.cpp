@@ -87,16 +87,16 @@ void Projection::render()
     /*---------------------------*/
 
     if (!tile.load(0, 0))
-        std::cerr << "Failed drawing isometric tile" << std::endl;
+        std::cerr << "Failed drawing isometric tile(0, 0)" << std::endl;
 
     if (!tile2.load(1, 0))
-        std::cerr << "Failed drawing isometric tile" << std::endl;
+        std::cerr << "Failed drawing isometric tile(1, 0)" << std::endl;
 
     if (!tile3.load(0, 1))
-        std::cerr << "Failed drawing isometric tile" << std::endl;
+        std::cerr << "Failed drawing isometric tile(0, 1)" << std::endl;
 
     if (!tile4.load(1, 1))
-        std::cerr << "Failed drawing isometric tile" << std::endl;
+        std::cerr << "Failed drawing isometric tile(1, 1)" << std::endl;
 
     this->window.clear(sf::Color::Black);
 
