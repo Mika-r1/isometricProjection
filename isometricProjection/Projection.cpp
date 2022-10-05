@@ -13,6 +13,11 @@ void Projection::initWindow()
     this->window.setVerticalSyncEnabled(false);
 }
 
+void Projection::initTextures()
+{
+   
+}
+
 //Constructor / Destructor
 Projection::Projection()
 {
@@ -21,7 +26,7 @@ Projection::Projection()
 
 Projection::~Projection()
 {
-   
+    
 }
 
 //Accessors
@@ -38,6 +43,13 @@ bool Projection::isOpen()
 //Functions
 void Projection::pollEvents()
 {
+    this->isoTiles.push_back(
+        new isometricTile(
+            0,
+            0
+        )
+    );
+
     /*
     * @return void
     * 
@@ -79,13 +91,16 @@ void Projection::render()
     * @brief Render manager, calls everything that needs to get drawn to screen.
     */
 
+    
     /*PROBABLY NOT IDEAL SOLUTION*/
+    /*
     isoTile tile;
     isoTile tile2;
     isoTile tile3;
     isoTile tile4;
+    */
     /*---------------------------*/
-
+    /*
     if (!tile.load(0, 0))
         std::cerr << "Failed drawing isometric tile(0, 0)" << std::endl;
 
@@ -104,6 +119,12 @@ void Projection::render()
     this->window.draw(tile2);
     this->window.draw(tile3);
     this->window.draw(tile4);
+    */
+
+    for (auto* isometricTile : this->isoTiles)
+    {
+        isometricTile->render(this->window);
+    }
 
     this->window.display();
 }

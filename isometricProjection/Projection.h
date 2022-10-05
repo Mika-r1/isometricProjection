@@ -9,8 +9,10 @@
 #include <SFML/Network.hpp>
 
 #include <iostream>
+#include <vector>
 
 #include "isoTile.h"
+#include "isometricTile.h"
 
 class Projection
 {
@@ -32,8 +34,12 @@ private:
 	//SFML Event
 	sf::Event sfEv;
 
+	//Isometric Tiles :)
+	std::vector<isometricTile*> isoTiles;
+
 	//Private functions
 	void initWindow();
+	void initTextures();
 
 public:
 	//Constructor / Destructor
