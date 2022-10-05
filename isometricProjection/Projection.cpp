@@ -1,5 +1,5 @@
 //Includes
-#include "stdafx.h"
+#include "stdafx.h"a
 #include "Projection.h"
 
 //Private functions
@@ -40,6 +40,7 @@ void Projection::buildMap()
     * 
     * @brief All the tiles are getting added to the vector in this function.
     */
+    /*Just for testing, not ideal to add every tile by hand.*/
     this->addTile(0, 0);
     this->addTile(1, 0);
     this->addTile(0, 1);
