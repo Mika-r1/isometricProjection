@@ -1,4 +1,5 @@
 //Includes
+#include "stdafx.h"
 #include "isoTile.h"
 
 /*Overriden draw() function*/

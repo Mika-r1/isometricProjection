@@ -1,3 +1,5 @@
+//Includes
+#include "stdafx.h"
 #include "Projection.h"
 
 //Private functions
@@ -13,15 +15,73 @@ void Projection::initWindow()
     this->window.setVerticalSyncEnabled(false);
 }
 
-void Projection::initTextures()
+void Projection::addTile(unsigned int pos_x, unsigned int pos_y)
 {
-   
+    /*
+    * @return void
+    * 
+    * @param pos_x, unsigned int for the x component of the Tile's position
+    * @param pos_y, unsigned int for the y component of the Tile's position
+    * 
+    * @brief Adds a new Tile at the parameter's position to the Vector. 
+    */
+    this->isoTiles.push_back(
+        new isometricTile(
+            pos_x,
+            pos_y
+        )
+    );
+}
+
+void Projection::buildMap()
+{
+    /*
+    * @return void
+    * 
+    * @brief All the tiles are getting added to the vector in this function.
+    */
+    this->addTile(0, 0);
+    this->addTile(1, 0);
+    this->addTile(0, 1);
+    this->addTile(1, 1);
+    this->addTile(2, 2);
+    this->addTile(3, 3);
+    this->addTile(4, 4);
+    this->addTile(5, 5);
+    this->addTile(6, 6);
+    this->addTile(7, 7);
+    this->addTile(8, 8);
+    this->addTile(9, 8);
+    this->addTile(8, 9);
+    this->addTile(9, 9);
+    this->addTile(10, 10);
+    this->addTile(11, 11);
+    this->addTile(12, 12);
+    this->addTile(13, 13);
+    this->addTile(14, 14);
+    this->addTile(15, 15);
+    this->addTile(16, 16);
+    this->addTile(17, 16);
+    this->addTile(16, 17);
+    this->addTile(17, 17);
+    this->addTile(18, 18);
+    this->addTile(19, 19);
+    this->addTile(20, 20);
+    this->addTile(21, 21);
+    this->addTile(22, 22);
+    this->addTile(23, 23);
+    this->addTile(24, 24);
+    this->addTile(25, 24);
+    this->addTile(24, 25);
+    
+    std::cout << "Amount of Tiles: " << isoTiles.size() << std::endl;
 }
 
 //Constructor / Destructor
 Projection::Projection()
 {
     this->initWindow();
+    this->buildMap();
 }
 
 Projection::~Projection()
@@ -43,13 +103,6 @@ bool Projection::isOpen()
 //Functions
 void Projection::pollEvents()
 {
-    this->isoTiles.push_back(
-        new isometricTile(
-            0,
-            0
-        )
-    );
-
     /*
     * @return void
     * 
@@ -90,8 +143,7 @@ void Projection::render()
     * 
     * @brief Render manager, calls everything that needs to get drawn to screen.
     */
-
-    
+    /*!! @Old: !!*/
     /*PROBABLY NOT IDEAL SOLUTION*/
     /*
     isoTile tile;

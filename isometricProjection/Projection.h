@@ -2,15 +2,6 @@
 #define PROJECTION_H
 
 //Includes
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-
-#include <iostream>
-#include <vector>
-
 #include "isoTile.h"
 #include "isometricTile.h"
 
@@ -39,7 +30,8 @@ private:
 
 	//Private functions
 	void initWindow();
-	void initTextures();
+	void addTile(unsigned int pos_x, unsigned int pos_y);
+	void buildMap();
 
 public:
 	//Constructor / Destructor

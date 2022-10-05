@@ -1,18 +1,13 @@
 //Includes
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-
-#include <iostream>
-
+#include "stdafx.h"
 #include "Projection.h"
 
 int main()
 {
+	//Projection object
 	Projection projection;
 
+	//Executed while window is open
 	while (projection.isOpen())
 	{
 		projection.update();

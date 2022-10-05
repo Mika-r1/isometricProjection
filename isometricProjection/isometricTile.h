@@ -1,16 +1,6 @@
 #ifndef ISOMETRICTILE_H
 #define ISOMETRICTILE_H
 
-//Includes
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-
-#include <iostream>
-#include <vector>
-
 class isometricTile
 {
 	/*
@@ -31,7 +21,7 @@ private:
 	static const int x_start = WINDOW_WIDTH / 2 - TILE_WIDTH / 2;
 	static const int y_start = TILE_HEIGHT;
 
-	//Tile shape
+	//Tile Shape and Texture
 	sf::Texture tileTexture;
 	sf::Sprite tile;
 
