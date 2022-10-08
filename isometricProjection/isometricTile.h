@@ -12,12 +12,15 @@ class isometricTile
 	* With this class you can render multiple tiles.
 	*/
 private:
-	//STATIC_CONST_VARS
+	/**STATIC_CONST_VARS**/
+	//Tile properties
 	static const int TILE_WIDTH = 32;
 	static const int TILE_HEIGHT = 32;
 
+	//Window properties
 	static const int WINDOW_WIDTH = 512;
 
+	//Starting positions for the first Tile (Basically middle of the screen here)
 	static const int x_start = WINDOW_WIDTH / 2 - TILE_WIDTH / 2;
 	static const int y_start = TILE_HEIGHT;
 
@@ -26,12 +29,12 @@ private:
 	sf::Sprite tile;
 
 	//Private functions
-	sf::Vector2f calculateScreenPositions(unsigned int pos_x, unsigned int pos_y);
+	sf::Vector2f calculateScreenPositions(unsigned int pos_x, unsigned int pos_y, unsigned int pos_z);
 
 public:
 	//Constructor / Destructor
 	isometricTile();
-	isometricTile(unsigned int pos_x, unsigned int pos_y);
+	isometricTile(sf::Texture* texture, unsigned int pos_x, unsigned int pos_y, unsigned int pos_z);
 	virtual ~isometricTile();
 
 	//Functions

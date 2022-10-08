@@ -12,6 +12,7 @@
 //C++ Libraries
 #include <iostream>
 #include <vector>
+#include <map>
 
 class stdafx
 {

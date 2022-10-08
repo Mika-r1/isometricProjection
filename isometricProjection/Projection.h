@@ -15,9 +15,13 @@ private:
 	* 
 	* @details The most things of projecting a view isometric are done in here.
 	*/
-	//STATIC_CONST_VARS
-	static const int WINDOW_WIDTH = 512;
-	static const int WINDOW_HEIGHT = 512;
+	/**STATIC_CONST_VARS**/
+	//Window properties
+	static const unsigned int WINDOW_WIDTH = 512;
+	static const unsigned int WINDOW_HEIGHT = 512;
+
+	//Amount of different Tiles
+	static const unsigned int AMOUNT_OF_TILES = 1;
 
 	//SFML window
 	sf::RenderWindow window;
@@ -25,12 +29,16 @@ private:
 	//SFML Event
 	sf::Event sfEv;
 
+	//Image map
+	std::map<unsigned int, sf::Texture*> textures;
+
 	//Isometric Tiles :)
 	std::vector<isometricTile*> isoTiles;
 
 	//Private functions
 	void initWindow();
-	void addTile(unsigned int pos_x, unsigned int pos_y);
+	void initTextures();
+	void addTile(unsigned int pos_x, unsigned int pos_y, unsigned int pos_z);
 	void buildMap();
 
 public:

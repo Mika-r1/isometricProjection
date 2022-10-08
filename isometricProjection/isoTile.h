@@ -11,12 +11,15 @@ class isoTile : public sf::Drawable
 	* @details In this class the position of each tile is calculated and then drawn to the screen since the class inherited from sf::Drawable.
 	*/
 private:
-	//STATIC_CONST_VARS
+	/**STATIC_CONST_VARS**/
+	//Tile properties
 	static const int TILE_WIDTH = 32;
 	static const int TILE_HEIGHT = 32;
 
+	//Window properties
 	static const int WINDOW_WIDTH = 512;
 
+	//Starting positions for the first Tile (Basically middle of the screen here)
 	static const int x_start = WINDOW_WIDTH / 2 - TILE_WIDTH / 2;
 	static const int y_start = TILE_HEIGHT;
 	
