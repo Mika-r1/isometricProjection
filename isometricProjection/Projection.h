@@ -16,12 +16,11 @@ private:
 	* @details The most things of projecting a view isometric are done in here.
 	*/
 	/**STATIC_CONST_VARS**/
-	//Window properties
-	static const unsigned int WINDOW_WIDTH = 512;
-	static const unsigned int WINDOW_HEIGHT = 512;
+	//Amount of different Tile textures
+	static const unsigned int AMOUNT_OF_TILETEXTURES = 2;
 
-	//Amount of different Tiles
-	static const unsigned int AMOUNT_OF_TILES = 2;
+	//Maximum Map diameter
+	static const unsigned int MAX_MAP_DIAMETER = 8;
 
 	//SFML window
 	sf::RenderWindow window;
@@ -31,6 +30,46 @@ private:
 
 	//Image map
 	std::map<unsigned int, sf::Texture*> textures;
+
+	//Structure of the Map where the number stands for the texture that gets loaded at position of x and y
+	const int tileMapLayer_0[MAX_MAP_DIAMETER][MAX_MAP_DIAMETER] =
+	{
+		//8x8 Map at Layer 0 | insert -1 anywhere to not draw a tile there
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 }
+	};
+
+	const int tileMapLayer_1[MAX_MAP_DIAMETER][MAX_MAP_DIAMETER] =
+	{
+		//8x8 Map at layer 1 | insert -1 anywhere to not draw a tile there
+		{ -1,-1,-1,-1,-1,-1,-1,-1 },
+		{ -1, 2, 2, 2, 2, 2, 2,-1 },
+		{ -1, 2,-1,-1,-1,-1, 2,-1 },
+		{ -1, 2,-1,-1,-1,-1, 2,-1 },
+		{ -1, 2,-1,-1,-1,-1, 2,-1 },
+		{ -1, 2,-1,-1,-1,-1, 2,-1 },
+		{ -1, 2, 2, 2, 2, 2, 2,-1 },
+		{ -1,-1,-1,-1,-1,-1,-1,-1 }
+	};
+
+	const int tileMapLayer_2[MAX_MAP_DIAMETER][MAX_MAP_DIAMETER] =
+	{
+		//8x8 Map at Layer 2 | insert -1 anywhere to not draw a tile there
+		{-1,-1,-1,-1,-1,-1,-1,-1},
+		{-1, 1, 1, 1, 1, 1, 1,-1},
+		{-1, 1, 1, 1, 1, 1, 1,-1},
+		{-1, 1, 1, 1, 1, 1, 1,-1},
+		{-1, 1, 1, 1, 1, 1, 1,-1},
+		{-1, 1, 1, 1, 1, 1, 1,-1},
+		{-1, 1, 1, 1, 1, 1, 1,-1},
+		{-1,-1,-1,-1,-1,-1,-1,-1}
+	};
 
 	//Vector of tiles :)
 	std::vector<isometricTile*> isoTiles;

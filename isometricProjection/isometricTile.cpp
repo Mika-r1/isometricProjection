@@ -14,8 +14,8 @@ sf::Vector2f isometricTile::calculateScreenPositions(unsigned int pos_x, unsigne
 	*
 	* @brief Calculates the screen coordinates of each Tile.
 	*/
-	int x_screen = x_start + (pos_x - pos_y) * (TILE_WIDTH / 2);
-	int y_screen = (y_start + ((pos_x + pos_y) * (TILE_HEIGHT / 2) ) / 2) - (pos_z  * TILE_HEIGHT / 2);
+	int x_screen = x_start + (pos_x - pos_y) * (stdafx::TILE_WIDTH / 2);
+	int y_screen = (y_start + ((pos_x + pos_y) * (stdafx::TILE_HEIGHT / 2) ) / 2) - (pos_z  * stdafx::TILE_HEIGHT / 2);
 
 	return sf::Vector2f(static_cast<float>(x_screen), static_cast<float>(y_screen));
 }

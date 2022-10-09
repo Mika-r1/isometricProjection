@@ -22,8 +22,18 @@ class stdafx
 	* @brief Precompiled Header class
 	* 
 	* @details
-	* Precompiled headers for shorter compile time and easier useability.
+	* Precompiled headers for shorter compile time and easier useability. In addition static const variables that are used in various files are in
+	* here because this header gets included from every file anyways.
 	*/
+public:
+	/**STATIC_CONST_VARS**/
+	//Tile properties
+	static const int TILE_WIDTH = 32;
+	static const int TILE_HEIGHT = 32;
+
+	//Window properties
+	static const int WINDOW_WIDTH = 512;
+	static const int WINDOW_HEIGHT = 512;
 };
 
 #endif // !STDAFX_H
