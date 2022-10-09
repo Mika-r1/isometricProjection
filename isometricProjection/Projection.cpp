@@ -30,11 +30,12 @@ void Projection::initTextures()
 	}
 }
 
-void Projection::addTile(unsigned int pos_x, unsigned int pos_y, unsigned int pos_z)
+void Projection::addTile(unsigned int tileNumber, unsigned int pos_x, unsigned int pos_y, unsigned int pos_z)
 {
 	/*
 	* @return void
 	*
+	* @param tileNumber unsigned int that indicates the tile from the textures std::map
 	* @param pos_x, unsigned int for the x component of the Tile's position
 	* @param pos_y, unsigned int for the y component of the Tile's position
 	* @param pos_z, unsigned int for the optical z component of the new Tile's position
@@ -43,8 +44,7 @@ void Projection::addTile(unsigned int pos_x, unsigned int pos_y, unsigned int po
 	*/
 	this->isoTiles.push_back(
 		new isometricTile(
-			//Not perfect yet, gaol is that addTile() function has 1 parameter more to indicate the Tile which is getting selected
-			this->textures[1],
+			this->textures[tileNumber],
 			pos_x,
 			pos_y,
 			pos_z
@@ -59,15 +59,15 @@ void Projection::buildMap()
 	*
 	* @brief All the tiles are getting added to the vector in this function.
 	*/
-	this->addTile(0, 0, 0);
-	this->addTile(0, 0, 1);
-	this->addTile(0, 0, 2);
-	this->addTile(1, 0, 0);
-	this->addTile(1, 0, 1);
-	this->addTile(0, 1, 0);
-	this->addTile(0, 1, 1);
-	this->addTile(1, 1, 0);
-	this->addTile(1, 1, 1);
+	this->addTile(1, 0, 0, 0);
+	this->addTile(2, 0, 0, 1);
+	this->addTile(2, 0, 0, 2);
+	this->addTile(2, 1, 0, 0);
+	this->addTile(1, 1, 0, 1);
+	this->addTile(2, 0, 1, 0);
+	this->addTile(1, 0, 1, 1);
+	this->addTile(2, 1, 1, 0);
+	this->addTile(1, 1, 1, 1);
 
 	std::cout << "Amount of Tiles: " << isoTiles.size() << std::endl;
 }

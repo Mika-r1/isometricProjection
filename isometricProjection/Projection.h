@@ -21,7 +21,7 @@ private:
 	static const unsigned int WINDOW_HEIGHT = 512;
 
 	//Amount of different Tiles
-	static const unsigned int AMOUNT_OF_TILES = 1;
+	static const unsigned int AMOUNT_OF_TILES = 2;
 
 	//SFML window
 	sf::RenderWindow window;
@@ -32,13 +32,13 @@ private:
 	//Image map
 	std::map<unsigned int, sf::Texture*> textures;
 
-	//Isometric Tiles :)
+	//Vector of tiles :)
 	std::vector<isometricTile*> isoTiles;
 
 	//Private functions
 	void initWindow();
 	void initTextures();
-	void addTile(unsigned int pos_x, unsigned int pos_y, unsigned int pos_z);
+	void addTile(unsigned int tileNumber, unsigned int pos_x, unsigned int pos_y, unsigned int pos_z);
 	void buildMap();
 
 public:

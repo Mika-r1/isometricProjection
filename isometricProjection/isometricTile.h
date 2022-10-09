@@ -25,7 +25,6 @@ private:
 	static const int y_start = TILE_HEIGHT;
 
 	//Tile Shape and Texture
-	sf::Texture tileTexture;
 	sf::Sprite tile;
 
 	//Private functions
