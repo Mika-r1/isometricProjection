@@ -1,0 +1,14 @@
+void Projection::rotate() {
+	//zeile
+	for (int zeile = 0; zeile < MAX_MAP_DIAMETER; zeile++) {
+		//spalte
+		for (int spalte = 0; spalte < MAX_MAP_DIAMETER; spalte++) {
+			tileMapLayerRotate_0[spalte][MAX_MAP_DIAMETER-1-zeile] = tileMapLayer_0[zeile][spalte];
+		}
+	}
+}
+			case sf::Keyboard::R:
+				this->isRotated = !isRotated;
+				break;
+
+	int tileMapLayerRotate_0[MAX_MAP_DIAMETER][MAX_MAP_DIAMETER];
